@@ -1,0 +1,87 @@
+[2016-08-09 21:51:41 +0000] [12377] [DEBUG] Current configuration:
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7fa6080cfed8>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7fa6080cfc08>
+  pre_fork: <function pre_fork at 0x7fa6080cfd70>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 1000
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 3
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7fa6080cfaa0>
+  pre_exec: <function pre_exec at 0x7fa6080d9500>
+  worker_tmp_dir: None
+  post_worker_init: <function post_worker_init at 0x7fa6080d90c8>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x7fa6080d9b90>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7fa6080d9668>
+  post_request: <function post_request at 0x7fa6080d9758>
+  user: 1000
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7fa6080d9230>
+  threads: 1
+  max_requests: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x7fa6080d98c0>
+  chdir: /home/ubuntu/DjangoWithCNN/myproject
+  paste: None
+  default_proc_name: myproject.wsgi:application
+  errorlog: /home/ubuntu/DjangoWithCNN/myproject/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  daemon: False
+  ciphers: TLSv1
+  on_starting: <function on_starting at 0x7fa6080cf938>
+  worker_abort: <function worker_abort at 0x7fa6080d9398>
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7fa6080d9a28>
+  timeout: 30
+  ca_certs: None
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2016-08-09 21:51:41 +0000] [12377] [INFO] Starting gunicorn 19.6.0
+[2016-08-09 21:51:41 +0000] [12377] [DEBUG] Arbiter booted
+[2016-08-09 21:51:41 +0000] [12377] [INFO] Listening at: http://127.0.0.1:8000 (12377)
+[2016-08-09 21:51:41 +0000] [12377] [INFO] Using worker: sync
+[2016-08-09 21:51:41 +0000] [12382] [INFO] Booting worker with pid: 12382
+[2016-08-09 21:51:41 +0000] [12385] [INFO] Booting worker with pid: 12385
+[2016-08-09 21:51:41 +0000] [12386] [INFO] Booting worker with pid: 12386
+[2016-08-09 21:51:41 +0000] [12377] [DEBUG] 3 workers
+[2016-08-09 21:56:27 +0000] [12385] [INFO] Parent changed, shutting down: <Worker 12385>
+[2016-08-09 21:56:27 +0000] [12385] [INFO] Worker exiting (pid: 12385)
+[2016-08-09 21:56:27 +0000] [12386] [INFO] Parent changed, shutting down: <Worker 12386>
+[2016-08-09 21:56:27 +0000] [12386] [INFO] Worker exiting (pid: 12386)

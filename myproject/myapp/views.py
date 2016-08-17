@@ -8,7 +8,6 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from .forms import ImageUploadForm
 from .models import PictureModel
-from random import randint
 from facedetection import main
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
@@ -54,13 +53,21 @@ def fileAttachment(request):
 			m.model_pic = form.cleaned_data['image']
 			m.name = m.model_pic.url
 			m.save()
-			result = main("/home/ubuntu/myproject"+str(m.name))
+			image = Image.open(m.model_pic)
+			width, height = image.size
+			if width > 600:
+				basewidth = 400
+				wpercent = (basewidth/float(image.size[0]))
+				hsize = int((float(image.size[1])*float(wpercent)))
+				image = image.resize((basewidth,hsize), Image.ANTIALIAS)
+			FileName = str(uuid.uuid1())+".png"
+			Pathname = "/home/ubuntu/DjangoWithCNN/myproject/media/"+FileName
+			image.save(Pathname)
+			result = main(Pathname)
 			print(result)
 			return HttpResponse(result)
 		else:
-			return HttpResponse(json.dumps({'data':"File uploaded is not an image",'url':"/home/ubuntu/myproject/media/blank_person.png"}))
-
-
+			return HttpResponse(json.dumps({'data':"File uploaded is not an image",'url':"/home/ubuntu/DjangoWithCNN/myproject/media/blank_person.png"}))
 
 @csrf_exempt
 def urlLinkSpecified(request):
@@ -72,11 +79,17 @@ def urlLinkSpecified(request):
 			maintype= response.headers['Content-Type'].split(';')[0].lower()
 			if maintype not in ('image/png', 'image/jpeg', 'image/gif'):
 				print("a")
-				return HttpResponse(json.dumps({'data':"Url is not of image type",'url':"/home/ubuntu/myproject/media/blank_person.png"}))
+				return HttpResponse(json.dumps({'data':"Url is not of image type",'url':"/home/ubuntu/DjangoWithCNN/myproject/media/blank_person.png"}))
 			else:
 				img = Image.open(StringIO(response.content))		
-				FileName = os.path.splitext(url.split("/")[-1])[0]+".png"
-				Pathname = "/home/ubuntu/myproject/media/"+FileName
+				FileName = str(uuid.uuid1())+".png"
+				Pathname = "/home/ubuntu/DjangoWithCNN/myproject/media/"+FileName
+				width, height = img.size
+				if width > 600:
+					basewidth = 400
+					wpercent = (basewidth/float(img.size[0]))
+					hsize = int((float(img.size[1])*float(wpercent)))
+					img = img.resize((basewidth,hsize), Image.ANTIALIAS)
 				img.save(Pathname)
 				print("--- %s seconds ---" % (time.time() - start_time))
 				result = main(Pathname)
@@ -84,11 +97,6 @@ def urlLinkSpecified(request):
 				return HttpResponse(result)
 		else:
 			return HttpResponse(json.dumps({'data':"Invalid URL",'url':"/home/ubuntu/myproject/media/blank_person.png"}))
-
-		
-
-
-	
 
 def index(request):
 	form = ImageUploadForm()

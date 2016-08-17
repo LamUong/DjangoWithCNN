@@ -1,0 +1,84 @@
+Using Theano backend.
+modprobe: ERROR: could not insert 'nvidia_352': No such device
+[17/Aug/2016 21:59:13] "GET /myapp/ HTTP/1.1" 200 10755
+Not Found: /myapp/above.ttf
+[17/Aug/2016 21:59:13] "GET /myapp/above.ttf HTTP/1.1" 404 2642
+[17/Aug/2016 21:59:18] "GET /myapp/ HTTP/1.1" 200 10755
+Not Found: /myapp/above.ttf
+[17/Aug/2016 21:59:18] "GET /myapp/above.ttf HTTP/1.1" 404 2642
+[17/Aug/2016 21:59:41] "GET /myapp/ HTTP/1.1" 200 10755
+Not Found: /myapp/above.ttf
+[17/Aug/2016 21:59:41] "GET /myapp/above.ttf HTTP/1.1" 404 2642
+Performing system checks...
+
+/home/ubuntu/Lam/Weights/MPM.hdf5
+System check identified no issues (0 silenced).
+August 17, 2016 - 21:59:11
+Django version 1.9.8, using settings 'myproject.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/media/pexels-photo-14116.jpeg
+--- 17.4796199799 seconds sdssd---
+--- 0.649672031403 seconds ---
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s[17/Aug/2016 21:59:43] "POST /myapp/fileAttachment HTTP/1.1" 200 540
+[17/Aug/2016 21:59:45] "POST /myapp/fileAttachment HTTP/1.1" 200 89
+[17/Aug/2016 21:59:46] "GET /media/sad-woman-1439053.jpg HTTP/1.1" 200 55397
+
+--- 1.12494492531 seconds ---
+{"url": "/home/ubuntu/DjangoWithCNN/myproject/media/pexels-photo-14116.jpeg", "data": "[\n   {\n      \"FaceRectangle\": {\n         \"bottom\": 3229, \n         \"left\": 578, \n         \"right\": 2566, \n         \"top\": 1241\n      }, \n      \"Scores\": {\n         \"anger\": \"0.00206211\", \n         \"disgust\": \"8.26167e-08\", \n         \"fear\": \"0.018313\", \n         \"happy\": \"0.652515\", \n         \"neutral\": \"0.18637\", \n         \"sad\": \"0.120674\", \n         \"surprise\": \"0.0200649\"\n      }\n   }\n]"}
+/media/sad-woman-1439053.jpg
+--- 0.199074983597 seconds sdssd---
+--- 0.0165579319 seconds ---
+--- 5.19752502441e-05 seconds ---
+{"url": "/home/ubuntu/DjangoWithCNN/myproject/media/sad-woman-1439053.jpg", "data": "[]"}
+/media/sample_pic_five.jpg
+--- 0.175372123718 seconds sdssd---
+--- 0.0201320648193 seconds ---
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s[17/Aug/2016 21:59:49] "POST /myapp/fileAttachment HTTP/1.1" 200 541
+[17/Aug/2016 21:59:49] "GET /media/sample_pic_five.jpg HTTP/1.1" 200 67854
+
+--- 0.0552361011505 seconds ---
+{"url": "/home/ubuntu/DjangoWithCNN/myproject/media/sample_pic_five.jpg", "data": "[\n   {\n      \"FaceRectangle\": {\n         \"bottom\": 214, \n         \"left\": 274, \n         \"right\": 363, \n         \"top\": 125\n      }, \n      \"Scores\": {\n         \"anger\": \"0.0174759\", \n         \"disgust\": \"0.969055\", \n         \"fear\": \"0.00220669\", \n         \"happy\": \"0.000251668\", \n         \"neutral\": \"0.000175949\", \n         \"sad\": \"0.0108342\", \n         \"surprise\": \"7.37327e-07\"\n      }\n   }\n]"}
+/media/woman.jpg
+--- 0.0298309326172 seconds sdssd---
+--- 0.00341606140137 seconds ---
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s[17/Aug/2016 21:59:59] "POST /myapp/fileAttachment HTTP/1.1" 200 519
+[17/Aug/2016 21:59:59] "GET /media/woman.jpg HTTP/1.1" 200 15717
+
+--- 0.0533790588379 seconds ---
+{"url": "/home/ubuntu/DjangoWithCNN/myproject/media/woman.jpg", "data": "[\n   {\n      \"FaceRectangle\": {\n         \"bottom\": 185, \n         \"left\": 45, \n         \"right\": 134, \n         \"top\": 95\n      }, \n      \"Scores\": {\n         \"anger\": \"0.390069\", \n         \"disgust\": \"0.0647339\", \n         \"fear\": \"0.200581\", \n         \"happy\": \"8.40103e-07\", \n         \"neutral\": \"0.147306\", \n         \"sad\": \"0.0768107\", \n         \"surprise\": \"0.1205\"\n      }\n   }\n]"}
+/media/sample_pic_three.jpg
+--- 0.237458944321 seconds sdssd---
+--- 0.0334739685059 seconds ---
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s
+1/1 [==============================] - 0s[17/Aug/2016 22:00:06] "POST /myapp/fileAttachment HTTP/1.1" 200 543
+[17/Aug/2016 22:00:07] "GET /media/sample_pic_three.jpg HTTP/1.1" 200 116723
+[17/Aug/2016 22:03:02] "POST /myapp/fileAttachment HTTP/1.1" 200 89
+[17/Aug/2016 22:03:02] "GET /media/sad-woman-1439053.jpg HTTP/1.1" 200 55455

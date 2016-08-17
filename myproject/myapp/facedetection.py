@@ -31,7 +31,7 @@ model.add(Convolution2D(64, 5, 5, border_mode='valid',
 						input_shape=(1, img_rows, img_cols)))
 model.add(keras.layers.advanced_activations.PReLU(init='zero', weights=None))
 model.add(keras.layers.convolutional.ZeroPadding2D(padding=(2, 2), dim_ordering='th'))
-model.add(keras.layers.convolutional.AveragePooling2D(pool_size=(5, 5),strides=(2, 2)))
+model.add(MaxPooling2D(pool_size=(5, 5),strides=(2, 2)))
   
 model.add(keras.layers.convolutional.ZeroPadding2D(padding=(1, 1), dim_ordering='th')) 
 model.add(Convolution2D(64, 3, 3))
@@ -73,7 +73,7 @@ model.compile(loss='categorical_crossentropy',
 			  metrics=['accuracy'])
 
 
-filepath='/home/ubuntu/Lam/Weights/Micro6832.hdf5'
+filepath='/home/ubuntu/Lam/Weights/MPM.hdf5'
 print(filepath)
 model.load_weights(filepath)
 
@@ -214,12 +214,19 @@ def predict(data5):
 	Train_x_Flip  = ConvertToArrayandReshape(Flip(data5))
 	Train_x_Rotleft = ConvertToArrayandReshape(Roated15Left(data5))
 	Train_x_Rotright = ConvertToArrayandReshape(Roated15Right(data5))
+	Train_x_ShiftedUp = ConvertToArrayandReshape(shiftedUp20(data5))
+	Train_x_ShiftedDown = ConvertToArrayandReshape(shiftedDown20(data5))
+	Train_x_ShiftedLeft = ConvertToArrayandReshape(shiftedLeft20(data5))
+	Train_x_ShiftedRight = ConvertToArrayandReshape(shiftedRight20(data5))
 	
-	a = np.array([ model.predict_proba(Train_x_Init, verbose=1)[0], 
-		model.predict_proba(Train_x_Flip, verbose=1)[0], 
-		model.predict_proba(Train_x_Rotleft, verbose=1)[0], 
-		model.predict_proba(Train_x_Rotright, verbose=1)[0],  
-	   
+	a = np.array([  model.predict_proba(Train_x_Init, verbose=1)[0], 
+			model.predict_proba(Train_x_Flip, verbose=1)[0], 
+			model.predict_proba(Train_x_Rotleft, verbose=1)[0], 
+			model.predict_proba(Train_x_Rotright, verbose=1)[0],  
+			model.predict_proba(Train_x_ShiftedUp, verbose=1)[0], 
+			model.predict_proba(Train_x_ShiftedDown, verbose=1)[0], 
+			model.predict_proba(Train_x_ShiftedLeft, verbose=1)[0], 
+			model.predict_proba(Train_x_ShiftedRight, verbose=1)[0],  
 		])
 	return a.mean(axis=0)
 def loadData(imagepath):
