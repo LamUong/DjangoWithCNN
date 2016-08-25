@@ -92,6 +92,7 @@ body { font-family: sans-serif; }
     margin-right: 0px;
     text-align:center;
     bottom:0px;
+    height:100%;
 }
 #id_image{
   margin:0 auto;
@@ -108,26 +109,70 @@ body { font-family: sans-serif; }
     cursor:pointer;
 }
 
-.left {
-  height: 100%;
-  width: 50%;
-  background-color: #f5f5f5; 
-  float: left;
-  font-size: 13px;
-  line-height: 1.42857143;
-  color: #333;
-  margin-right: 2%;
- 
+@media screen and (max-width: 499px) {
+    .left {
+      margin: 0 auto;
+      height: 50%;
+      width: 80%;
+      background-color: #f5f5f5;
+      font-size: 13px;
+      line-height: 1.42857143;
+      color: #333;
+     
+    }
+    #footer{
+      height: auto;
+      margin-top: 8vh;
+    }
+    .right-wrapper {
+      height: 50%;
+      width: 80%;
+      background-color: #f5f5f5;
+      font-size: 13px;
+      line-height: 1.42857143;
+      color: #333;
+      margin: 0 auto;
+    }
+    #result_section{
+      height:60vh;
+      padding-bottom:5vh;
+    }
+    .jumbotron{
+      padding: 5px 5px 5px 5px;
+      margin-bottom:5px;
+    }
 }
-.right-wrapper {
-  height: 100%;
-  width: 48%;
-  background-color: #f5f5f5;
-  float: left;
-  font-size: 13px;
-  line-height: 1.42857143;
-  color: #333;
+
+@media screen and (min-width: 500px) {
+    .left {
+      height: 100%;
+      width: 50%;
+      background-color: #f5f5f5; 
+      float: left;
+      font-size: 13px;
+      line-height: 1.42857143;
+      color: #333;
+      margin-right: 2%;
+     
+    }
+    .right-wrapper {
+      height: 100%;
+      width: 48%;
+      background-color: #f5f5f5;
+      float: left;
+      font-size: 13px;
+      line-height: 1.42857143;
+      color: #333;
+    }
+    #result_section{
+      height:50vh;
+      padding-bottom:5vh;
+    }
+
 }
+
+
+
 .right {
   text-align:left;
     font-size: 13px;
@@ -207,11 +252,11 @@ html,body {
   width: 100%;
 }
 #url_button{
-  background: url("http://52.53.186.250:8000/media/url_button.png") no-repeat;
+  background: url("/static/url_button.png") no-repeat;
   background-size: 100% 100%;
 }
 #upload_button{
-  background: url("http://52.53.186.250:8000/media/upload.png") no-repeat;
+  background: url("/static/upload.png") no-repeat;
   background-size: 100% 100%;
 }
 input[type="hidden"], input[Type="hidden"]
