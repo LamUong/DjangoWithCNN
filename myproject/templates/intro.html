@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Lam's Personal Website</title>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+          <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+
+        
+    </head>
+    <style>
+    /*
+    #main{
+      height:70vh;
+    }
+    #left{
+      height:100%;
+      width:30%;
+      float:left;
+    }
+    #right{
+      height:100%;
+      width:69%;
+      float:right;
+    }
+    .selectors{
+      height:33%;
+      width:100%;
+      display:block;
+    }
+    .selectors p {
+      font-size:3vh;font-weight:500;
+      text-align: center;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    .selectors p > a {
+      position: relative;
+      color: #000;
+      text-decoration: none;
+    }
+
+    .selectors p > a:hover {
+      color: #000;
+      text-decoration: none;
+          	cursor: pointer;
+
+
+    }
+    .selectors p > a:before {
+      text-decoration: none;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #000;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
+    }
+    .selectors p > a:hover:before {
+    	cursor: pointer;
+      text-decoration: none;
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+
+    .active {
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; 
+    -webkit-animation: fadein 2s; 
+    -o-animation: fadein 2s;
+	}
+	@keyframes fadein {
+	    from {
+	        opacity:0;
+	    }
+	    to {
+	        opacity:1;
+	    }
+	}
+	@-moz-keyframes fadein { 
+	    from {
+	        opacity:0;
+	    }
+	    to {
+	        opacity:1;
+	    }
+	}
+	@-webkit-keyframes fadein { 
+	    from {
+	        opacity:0;
+	    }
+	    to {
+	        opacity:1;
+	    }
+	}
+	@-o-keyframes fadein { 
+	    from {
+	        opacity:0;
+	    }
+	    to {
+	        opacity: 1;
+	    }
+	}
+	#myname{
+		float:left;
+	}
+      
+	*/
+	html{
+	  height: 100%;
+	}
+	body {
+	  min-height: 100%;
+	}
+	#container{
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  bottom: 0;
+		  right: 0;
+		  overflow: auto;
+	}
+	#leftsidebar{
+		height:100%;
+		width:320px;
+		position: relative;
+    	overflow-x: hidden;
+    	overflow-y: scroll;
+    	background-color:rgb(64, 64, 64);
+    	float: left;
+	}
+	#rightcontent{
+		margin-left: 320px;
+		height:100%;
+	}
+	#container{
+		height:100%;
+		width:100%;
+	}
+	.sidebar li{
+		list-style: none;
+		text-decoration: none;
+		height:5vh;
+		line-height:5vh;
+
+	}
+	.sidebar li a:hover  {
+		cursor: pointer;
+      	text-decoration: none;
+      	color: white;
+
+	}
+	li a{
+		color: #b3b3b3;
+		font-size:15px;
+		padding-left: 20px;
+		display: block;
+	}
+	.name{
+		height:10vh;
+		line-height:10vh;
+	}
+	.name a{
+		font-size:3vh;
+		color: #fcfcfc;
+		padding-left: 40px;
+	}
+	.sidebar{
+		padding-left: 0px;
+	}
+	.sublink{
+		padding-left: 30px;
+	}
+	.lihover:hover { 
+		background-color:rgb(105,105,105); 
+	}
+	@media screen and (min-width: 1200px) {
+		#rightcontent p{
+			padding-right:20vw;
+		}
+	    
+	}
+	#rightcontent a {
+	    color: #337ab7;
+	    text-decoration: none;
+	}
+
+	#rightcontent a:hover 
+	{
+	     color:#337ab7; 
+	     text-decoration:none; 
+	     cursor:pointer;  
+	}
+    </style>
+
+    <script>
+
+    $( document ).ready(function() {
+	    $('.selectors').click(function(){
+	    	var toselect=$(this).attr("toselect");
+	    	if ($('#'+toselect).hasClass("active")){
+
+	    	}else{
+		    	$('.content').each(function(i, obj) {
+				    if($(obj).hasClass( "active" )){
+				    	$(obj).removeClass( "active" );
+				    	$(obj).css({    
+					        display: 'none',
+					    }); 
+				    }
+				});
+	       		$('#'+toselect).css({    
+					        display: '',
+					    }); 
+	       		$('#'+toselect).addClass("active");	
+		    }
+	    })
+	});
+    </script>
+    <body>
+    <div id="container">
+    	<div id="leftsidebar">
+	    	<ul class="sidebar">
+				<li class="name"><a href="/">Lam Uong</a></li>
+				<li class="lihover" ><a href="/static/cv.pdf">CV</a></li>
+				<li><a href="/">Projects</a></li>
+				<li class="lihover"><a class="sublink" href="/myapp">Facial Expressions Recognition</a></li>
+				<li class="lihover"><a class="sublink" href="https://github.com/LamUong/GaussianProcesses">Molecular Energy Predictor</a></li>
+				<li class="lihover"><a href="/puzzles">Puzzles</a></li>
+			</ul>
+    	</div>
+    	<div id="rightcontent">
+			<p style="font-size:20px;padding-top:10vh;">
+			My name is Lam and I am a fourth year Computer Science and Biology student from McGill University. <br/><br/>
+
+			My interests are  machine learning and web development. I am currently working on a research project on predicting water cluster's molecular energy using machine learning. I like programming and solving puzzles in my free time. <br/><br/>
+
+			You can contact me at <a href="mailto:lam.uong2@mail.mcgill.ca">lam.uong2@mail.mcgill.ca</a><br/>
+			<a style="color:black;" href="https://github.com/LamUong/"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a><br/>
+			<a style="color:black;" href="https://ca.linkedin.com/in/lam-uong-092298b5"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a><br/>
+			</p>
+    	</div>
+    </div>
+<!--
+        <div id="header">
+            <div class="jumbotron" style="background-color:white;text-align:left;">
+              <p id="myname"></p>
+            </div>
+        </div>
+        <div id="main">
+            <div id="left">
+              <div class="selectors" toselect="AboutContent">
+                <p><a>About me</a></p>
+              </div>
+              <div class="selectors" toselect="ProjectContent">
+                <p><a>Projects</a></p>
+              </div>
+              <div class="selectors" toselect="ContactContent">
+                <p><a>Contact</a></p>
+
+              </div>
+            </div>
+            <div id="right">
+            	<div class="content active" id="AboutContent" style="height:100%;">
+        		
+        			<p>LAM UONG<br>
+        			I am a fourth year Computer Science and Biology student from McGill University. My interests are  machine learning and web development. I am currently working on a research project on predicting water cluster's molecular energy using machine learning. 
+        			</p>
+        		</div>
+            	<div class="content" id="ProjectContent" style="height:100%;display:none;"><p>Facial Expressions Recognition<br>
+        			I implemented a Convolutional Neural Network to detect human facial expressions using fer2013 dataset. The network achieved state of the art accuracy on the test set. 
+        			</p>
+        			<p>Molecular Energy Prediction<br>
+        			I am working on a machine learning research project under the supervision of Prof. Rustam Z. Khaliullin. Quantum mechanics calculations of molecular energy yield accurate results but are very time consuming. The project focuses on exploring machine learning approachs to accurately estimate molecular energy of water molecule clusters with negligible computational cost. 
+        			</p>
+        		</div>
+            	<div class="content" id="ContactContent" style="height:100%;display:none;">
+	            	<p>Github:
+	            		Linkedin:
+	            		Email:
+
+	            	</p>
+            	</div>
+            </div>
+        </div>
+
+        <div id="footer" >
+            <div class="row" >
+                  <div>
+                      <footer class="footer" >
+                          <p class="center-text"> Checkout My Github Account! <i class="fa fa-github  fa-2x"aria-hidden="true"></i> and Resume</p>
+                      </footer>
+                  </div>
+              </div>
+        </div>
+
+
+-->
+    </body>
+</html>

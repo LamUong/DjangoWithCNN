@@ -102,6 +102,9 @@ def index(request):
 	form = ImageUploadForm()
 	return render(request, 'webpage.html', {'form': form})
 
+def intro(request):
+	return render(request, 'intro.html')
+
 
 
 																																																																																
